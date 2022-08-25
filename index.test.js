@@ -8,7 +8,11 @@ describe('[Exercise 1] trimProperties', () => {
     const actual = utils.trimProperties(input)
     expect(actual).toEqual(expected)
   })
-  // test('[2] returns a copy, leaving the original object intact', () => {})
+  test('[2] returns a copy, leaving the original object intact', () => {
+    const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    utils.trimProperties(input)
+    expect(input).toEqual({ foo: '  foo ', bar: 'bar ', baz: ' baz' })
+  })
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
@@ -35,7 +39,7 @@ describe('[Exercise 5] Seasons', () => {
   beforeEach(() => {
     seasons = new utils.Seasons() // each test must start with fresh seasons
   })
-  // test('[9] the FIRST call of seasons.next returns "summer"', () => {})
+  test('[9] the FIRST call of seasons.next returns "summer"', () => {})
   // test('[10] the SECOND call of seasons.next returns "fall"', () => {})
   // test('[11] the THIRD call of seasons.next returns "winter"', () => {})
   // test('[12] the FOURTH call of seasons.next returns "spring"', () => {})
